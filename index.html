@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate Actions Operations in a 23/5 Market | Executive Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:      #1a1a2e;
+  --ink-mid:  #2d2d4a;
+  --teal:     #009E96;
+  --teal-dk:  #007A73;
+  --teal-lt:  #E6F5F4;
+  --teal-mid: #00B4AB;
+  --amber:    #D97706;
+  --amber-lt: #FEF3C7;
+  --slate:    #64748B;
+  --slate-lt: #F1F5F9;
+  --white:    #FFFFFF;
+  --rule:     #E2E8F0;
+  --serif:    'Playfair Display', Georgia, serif;
+  --sans:     'Source Sans 3', system-ui, sans-serif;
+  --mono:     'Source Code Pro', 'Courier New', monospace;
+  --max:      1240px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--teal-dk);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{font-weight:600}
+em{font-style:italic}
+
+
+/* ISO / FIX field inline code */
+.field-ref{display:inline;font-family:var(--mono);font-size:0.82em;background:#F1F5F9;color:#1E3A5F;border:1px solid #CBD5E1;border-radius:3px;padding:0.1em 0.4em;white-space:nowrap}
+/* Matrix section when placed inline near sources */
+.matrix-inline{background:var(--slate-lt);padding:3rem 0 2rem;border-top:1px solid var(--rule)}
+.matrix-inline .matrix-inner{max-width:var(--max);margin:0 auto;padding:0 2rem}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:54px;gap:1rem}
+.nav-wordmark{font-family:var(--sans);font-weight:600;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);white-space:nowrap;flex-shrink:0}
+.nav-wordmark span{color:var(--teal)}
+.nav-links{display:flex;list-style:none;gap:0;flex-wrap:nowrap;overflow:hidden}
+.nav-links a{font-size:0.72rem;font-weight:500;color:var(--slate);padding:0.3rem 0.65rem;border-radius:3px;text-decoration:none;white-space:nowrap;transition:all 0.15s}
+.nav-links a:hover{color:var(--teal);background:var(--teal-lt)}
+
+/* HERO */
+.hero{background:var(--ink);padding:5.5rem 2rem 4.5rem}
+.hero-inner{max-width:var(--max);margin:0 auto}
+.hero-kicker{font-family:var(--mono);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal-mid);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.8rem}
+.hero-kicker::before{content:'';width:28px;height:1px;background:var(--teal);flex-shrink:0}
+h1.hero-title{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:700;line-height:1.1;color:var(--white);max-width:820px;margin-bottom:1.6rem;letter-spacing:-0.01em}
+h1.hero-title em{color:var(--teal-mid);font-style:normal}
+.hero-lede{font-size:1rem;color:#94A3B8;line-height:1.75;max-width:680px;margin-bottom:2.8rem}
+.hero-caveat{background:rgba(0,158,150,0.12);border:1px solid rgba(0,158,150,0.3);border-left:3px solid var(--teal);padding:1.1rem 1.4rem;margin-bottom:2.5rem;max-width:800px}
+.hero-caveat p{font-size:0.86rem;color:#CBD5E1;line-height:1.65}
+.hero-caveat strong{color:var(--teal-mid)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08)}
+.hstat{display:flex;flex-direction:column;gap:0.25rem}
+.hstat-l{font-size:0.64rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#64748B}
+.hstat-v{font-size:0.85rem;color:#94A3B8}
+
+/* SCOPE MATRIX */
+.matrix-section{background:var(--slate-lt);border-bottom:1px solid var(--rule);padding:3rem 2rem}
+.matrix-inner{max-width:var(--max);margin:0 auto}
+.matrix-title{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
+.matrix-sub{font-size:0.87rem;color:var(--slate);margin-bottom:2rem;max-width:640px}
+.matrix-table{width:100%;border-collapse:collapse;font-size:0.82rem}
+.matrix-table thead th{font-family:var(--mono);font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);text-align:left;padding:0.5rem 0.9rem;border-bottom:2px solid var(--teal);background:var(--white)}
+.matrix-table tbody tr{border-bottom:1px solid var(--rule);transition:background 0.12s}
+.matrix-table tbody tr:hover{background:var(--white)}
+.matrix-table td{padding:0.75rem 0.9rem;vertical-align:middle;color:var(--ink)}
+.matrix-table td:first-child{font-weight:600;font-size:0.84rem}
+.badge{display:inline-flex;align-items:center;gap:0.25rem;font-family:var(--mono);font-size:0.62rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.2rem 0.5rem;border-radius:3px;white-space:nowrap}
+.badge-direct{background:#DCFCE7;color:#166534;border:1px solid #BBF7D0}
+.badge-occ{background:#EDE9FE;color:#5B21B6;border:1px solid #DDD6FE}
+.badge-indirect{background:var(--amber-lt);color:#92400E;border:1px solid #FDE68A}
+.badge-infra{background:#F0F9FF;color:#0C4A6E;border:1px solid #BAE6FD}
+.badge-na{background:var(--rule);color:var(--slate);border:1px solid #CBD5E1}
+.dot-high{width:8px;height:8px;border-radius:50%;background:#EF4444;display:inline-block}
+.dot-med{width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block}
+.dot-low{width:8px;height:8px;border-radius:50%;background:#22C55E;display:inline-block}
+.matrix-legend{display:flex;gap:1.5rem;margin-top:1.2rem;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--slate)}
+
+/* SECTION STRUCTURE */
+.section{padding:4rem 2rem}
+.section-alt{background:var(--slate-lt)}
+.section-ink{background:var(--ink)}
+.container{max-width:var(--max);margin:0 auto}
+.sec-kicker{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem;display:flex;align-items:center;gap:0.6rem}
+.sec-kicker::before{content:'';width:16px;height:1px;background:var(--teal);flex-shrink:0}
+h2.sec-title{font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:0.6rem;max-width:720px}
+h2.sec-title-light{color:var(--white)}
+.sec-desc{font-size:0.9rem;color:var(--slate);line-height:1.7;max-width:640px;margin-bottom:0}
+.sec-desc-light{color:#94A3B8}
+
+/* THEME HEADER */
+.theme-hdr{background:var(--white);border-top:3px solid var(--teal);border-bottom:1px solid var(--rule);padding:2rem 2rem}
+.theme-hdr-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center}
+.theme-n{font-family:var(--serif);font-size:4.5rem;font-weight:700;color:var(--teal);opacity:0.15;line-height:1;user-select:none}
+h3.theme-title{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:0.3rem;letter-spacing:0.01em}
+.theme-scope{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem}
+
+/* CHALLENGE CARDS */
+.cards-wrap{max-width:var(--max);margin:0 auto;padding:0 2rem 2rem}
+.card{border-bottom:1px solid var(--rule);padding:2rem 0;display:grid;grid-template-columns:48px 1fr;gap:1.5rem;opacity:0;transform:translateY(12px);transition:opacity 0.4s ease,transform 0.4s ease}
+.card.vis{opacity:1;transform:translateY(0)}
+.card-n{font-family:var(--mono);font-size:0.68rem;font-weight:600;color:var(--teal);padding-top:0.2rem}
+.card-scope{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.6rem}
+h4.card-title{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.85rem}
+.card-body p{font-size:0.875rem;color:#374151;line-height:1.75;margin-bottom:0.75rem}
+.card-body p:last-of-type{margin-bottom:0}
+.card-source{display:flex;align-items:baseline;gap:0.45rem;flex-wrap:wrap;margin-top:1rem;padding-top:0.9rem;border-top:1px solid var(--rule);font-size:0.7rem;color:var(--slate)}
+.card-source-lbl{font-weight:700;text-transform:uppercase;letter-spacing:0.06em;flex-shrink:0;color:var(--slate)}
+.card-source a{color:var(--teal-dk);font-size:0.7rem}
+.card-source a:hover{text-decoration:underline}
+.src-pipe{color:var(--rule);margin:0 0.2rem}
+.tag-sourced{background:#DCFCE7;color:#166534;border:1px solid #BBF7D0;font-size:0.6rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.4rem;border-radius:2px;font-family:var(--mono)}
+.tag-analysis{background:var(--amber-lt);color:#92400E;border:1px solid #FDE68A;font-size:0.6rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.4rem;border-radius:2px;font-family:var(--mono)}
+
+/* CALLOUT */
+.callout{border-left:3px solid var(--teal);background:var(--teal-lt);padding:1.1rem 1.4rem;margin:1rem 0;border-radius:0 3px 3px 0}
+.callout p{font-size:0.875rem;color:var(--ink);line-height:1.65}
+.callout-amber{border-left-color:var(--amber);background:var(--amber-lt)}
+.callout-amber p{color:#451A03}
+.callout-blue{border-left-color:#2563EB;background:#EFF6FF}
+.callout-blue p{color:#1E3A5F}
+.callout strong{font-weight:700}
+
+/* CONTEXT GRID */
+.ctx-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.ctx-prose p{font-size:0.875rem;color:#374151;line-height:1.75;margin-bottom:0.85rem}
+.tl-label{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-bottom:0.9rem;font-weight:500}
+.tl{display:flex;flex-direction:column}
+.tl-row{display:grid;grid-template-columns:88px 1fr;gap:0.9rem;padding:0.8rem 0;border-bottom:1px solid var(--rule)}
+.tl-row:last-child{border-bottom:none}
+.tl-date{font-family:var(--mono);font-size:0.68rem;font-weight:600;color:var(--teal);padding-top:0.1rem;line-height:1.3}
+.tl-text{font-size:0.82rem;color:#374151;line-height:1.5}
+.tl-text strong{color:var(--ink);display:block;font-size:0.8rem;margin-bottom:0.12rem}
+
+/* REGULATORY CARDS */
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.reg-card{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:1.6rem;transition:box-shadow 0.15s}
+.reg-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.07)}
+.reg-card-badge{font-family:var(--mono);font-size:0.62rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.5rem;border-radius:2px;background:var(--teal-lt);color:var(--teal-dk);margin-bottom:0.8rem;display:inline-block}
+.reg-card h4{font-family:var(--sans);font-size:0.95rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.8rem}
+.reg-card p{font-size:0.84rem;color:#374151;line-height:1.7;margin-bottom:0.6rem}
+.reg-card p:last-of-type{margin-bottom:0}
+blockquote.pull{border-left:2px solid var(--teal);padding:0.6rem 1rem;margin:0.8rem 0 0;background:var(--teal-lt);border-radius:0 3px 3px 0}
+blockquote.pull p{font-size:0.8rem;font-style:italic;color:var(--teal-dk);margin:0}
+.reg-link{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.9rem;font-size:0.74rem;font-weight:600;color:var(--teal-dk)}
+.reg-link:hover{text-decoration:underline}
+
+/* AGENDA */
+.agenda-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start}
+.agenda-intro h2{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:1rem}
+.agenda-intro p{font-size:0.875rem;color:#94A3B8;line-height:1.7}
+.agenda-list{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.06)}
+.agenda-item{background:rgba(255,255,255,0.03);padding:1.25rem 1.5rem;display:grid;grid-template-columns:24px 1fr;gap:0.9rem;align-items:start;transition:background 0.15s}
+.agenda-item:hover{background:rgba(255,255,255,0.06)}
+.agenda-n{font-family:var(--mono);font-size:0.68rem;font-weight:600;color:var(--teal-mid);padding-top:0.12rem}
+.agenda-text{font-size:0.86rem;color:#94A3B8;line-height:1.6}
+.agenda-text strong{color:var(--white);display:block;font-size:0.84rem;margin-bottom:0.18rem}
+
+/* SOURCES */
+.src-intro{max-width:640px;margin-bottom:2rem}
+.src-intro p{font-size:0.86rem;color:var(--slate);line-height:1.7}
+.src-legend{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.src-leg-item{display:flex;align-items:center;gap:0.4rem;font-size:0.74rem;color:var(--slate)}
+.sdot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.sdot-reg{background:var(--teal)}
+.sdot-law{background:#7C3AED}
+.sdot-ind{background:var(--amber)}
+table.src-tbl{width:100%;border-collapse:collapse;font-size:0.8rem}
+table.src-tbl thead th{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);text-align:left;padding:0.55rem 0.9rem;border-bottom:2px solid var(--teal);background:var(--slate-lt)}
+table.src-tbl tbody tr{border-bottom:1px solid var(--rule);transition:background 0.12s}
+table.src-tbl tbody tr:hover{background:var(--slate-lt)}
+table.src-tbl td{padding:0.85rem 0.9rem;vertical-align:top;color:#374151;line-height:1.45}
+table.src-tbl td:nth-child(2){font-weight:600;color:var(--ink)}
+table.src-tbl td a{color:var(--teal-dk);font-size:0.72rem}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2rem}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.footer-brand{font-family:var(--mono);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#64748B}
+.footer-disc{font-size:0.72rem;color:#475569;max-width:580px;line-height:1.55}
+
+/* RESPONSIVE */
+@media(max-width:880px){
+  .ctx-grid,.agenda-grid,.reg-grid{grid-template-columns:1fr;gap:2rem}
+  .theme-n{display:none}
+  .theme-hdr-inner{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .card{grid-template-columns:1fr;gap:0.5rem}
+  .matrix-table thead{display:none}
+  .matrix-table td{display:block;padding:0.3rem 0.5rem}
+  .matrix-table tr{display:block;padding:0.8rem 0.5rem;border-bottom:1px solid var(--rule)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-wordmark">Corporate Actions Operations <span>/ 23x5 Briefing</span></span>
+    <ul class="nav-links">
+      <li><a href="#context">Context</a></li>
+      <li><a href="#scope">Asset Class Scope</a></li>
+      <li><a href="#systemic">Systemic</a></li>
+      <li><a href="#equities">Equities</a></li>
+      <li><a href="#options">Options</a></li>
+      <li><a href="#fixed-income">Fixed Income</a></li>
+      <li><a href="#regulatory">Regulatory</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Industry Briefing | April 2026</div>
+    <h1 class="hero-title">Corporate Actions Operations<br>in a <em>23/5 Market</em></h1>
+    <p class="hero-lede">
+      Near-continuous equity trading disrupts corporate actions processing across every asset class
+      serviced by the same infrastructure, the same teams, and the same night batch cycle.
+      This briefing documents the full operational challenge set, grounded entirely in primary
+      publications from regulators, clearinghouses, and industry bodies.
+    </p>
+    <div class="hero-caveat">
+      <p>
+        <strong>An essential precision on scope.</strong>
+        The DTCC and EY white paper states that the 23/5 proposal "is not expected to materially
+        disrupt corporate actions processing" at the DTCC level, because NSCC will maintain existing
+        end-of-day cutoffs for election submissions and CNS instructions. The challenges documented
+        here are challenges for the ecosystem surrounding those preserved cutoffs: the custodian
+        systems, intermediaries, and legal frameworks that feed into and act on DTCC's processing
+        windows. That distinction governs how firms should prioritize readiness programs.
+      </p>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-l">NSCC Transition</span><span class="hstat-v">June 28, 2026</span></div>
+      <div class="hstat"><span class="hstat-l">Asset Classes Covered</span><span class="hstat-v">Equities, ETPs, Options, Fixed Income</span></div>
+      <div class="hstat"><span class="hstat-l">Challenges Documented</span><span class="hstat-v">21 across 4 domains</span></div>
+      <div class="hstat"><span class="hstat-l">Primary Sources</span><span class="hstat-v">SIFMA, DTCC, OCC, ISDA, FINRA, Fed, SEC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPE MATRIX -->
+<!-- CONTEXT -->
+<section class="section" id="context">
+  <div class="container">
+    <div class="sec-kicker">Industry Context</div>
+    <h2 class="sec-title">The timeline is set. The ecosystem is not ready.</h2>
+    <div class="ctx-grid">
+      <div class="ctx-prose">
+        <p>U.S. equity markets are moving to a 23-hour, five-day trading week. The SEC has granted preliminary approval to 24X Exchange and NYSE Arca for extended operations. Nasdaq filed its proposal in December 2025. DTCC's NSCC has committed to a 23/5 clearing transition on June 28, 2026, subject to regulatory approval, with industry testing underway since January 11, 2026.</p>
+        <p>The SIPs submitted a Plan Amendment to the SEC on December 19, 2025, proposing hours from 8:00 p.m. ET Sunday to 8:00 p.m. ET Friday, with a one-hour daily maintenance pause from 8:00 to 9:00 p.m. ET. Exchange trading is expected from 9:00 p.m. ET Sunday, after the maintenance window. The Federal Reserve plans to extend Fedwire Funds and NSS to include Sundays, on a phased schedule targeting 2028 to 2029.</p>
+        <p>SIFMA is leading active working groups covering corporate actions and trade reporting, clearing and settlement, margin and risk, and market structure. SIFMA's January 2026 roundtable confirmed the question is not whether the transition happens, but when. OCC published its own white paper in September 2025 recommending a phased approach to continuous trading for listed options, beginning with a 22-5 or 23-5 model.</p>
+        <div class="callout callout-blue">
+          <p><strong>DTCC on corporate actions.</strong> The DTCC and EY white paper states the 23/5 proposal will maintain "existing end-of-day cutoffs for election submissions and CNS instructions, ensuring that core processes such as record date, expiration date, and ex-date remain tied to standard trading days." The ecosystem challenges documented in this briefing are challenges for the infrastructure surrounding those preserved cutoffs, not to DTCC's processing framework itself.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tl-label">Implementation Timeline</div>
+        <div class="tl">
+          <div class="tl-row"><span class="tl-date">May 2024</span><div class="tl-text"><strong>T+1 goes live</strong>CA workflows reconfigured as baseline across U.S. markets.</div></div>
+          <div class="tl-row"><span class="tl-date">Sep 2024</span><div class="tl-text"><strong>NSCC extends UTC</strong>Universal Trade Capture opens at 1:30 a.m. ET, ~2.5 hours earlier.</div></div>
+          <div class="tl-row"><span class="tl-date">Sep 2025</span><div class="tl-text"><strong>OCC white paper</strong>"Considerations of a Continuous Trading Environment" recommends phased 22-5/23-5 transition for listed options.</div></div>
+          <div class="tl-row"><span class="tl-date">Q2 2025</span><div class="tl-text"><strong>CFTC RFC</strong>Request for Comment on 24/7 derivatives. SIFMA, SIFMA AMG, and ISDA respond jointly.</div></div>
+          <div class="tl-row"><span class="tl-date">Jun 2025</span><div class="tl-text"><strong>SIFMA readiness framework</strong>"Extended Trading Hours: A New Frontier" published. Defines 8:00 p.m. ET trade-date cutoff and firm readiness requirements.</div></div>
+          <div class="tl-row"><span class="tl-date">Oct 2025</span><div class="tl-text"><strong>SIFMA Global Corporate Actions Forum</strong>Practitioners address CA modernization, overnight trading implications, and ISO 20022 standardization.</div></div>
+          <div class="tl-row"><span class="tl-date">Nov 2025</span><div class="tl-text"><strong>SEC 2026 exam priorities</strong>Division of Examinations names extended-hours trading compliance as an explicit FY2026 focus for broker-dealers.</div></div>
+          <div class="tl-row"><span class="tl-date">Dec 2025</span><div class="tl-text"><strong>DTCC and EY white paper</strong>Surveys 95 market participants. ~60% expect mandatory IT and risk management upgrades.</div></div>
+          <div class="tl-row"><span class="tl-date">Dec 19, 2025</span><div class="tl-text"><strong>SIP Plan Amendment filed</strong>Target: December 2026, pending SEC approval.</div></div>
+          <div class="tl-row"><span class="tl-date">Jan 11, 2026</span><div class="tl-text"><strong>DTCC testing begins</strong>All firms receiving UTC real-time output must participate, regardless of overnight trading plans.</div></div>
+          <div class="tl-row"><span class="tl-date">Jan 28, 2026</span><div class="tl-text"><strong>SIFMA roundtable</strong>Exchanges, CCPs, post-trade providers, and regulators convene to define implementation roadmap.</div></div>
+          <div class="tl-row"><span class="tl-date">Jun 28, 2026</span><div class="tl-text"><strong>NSCC 23/5 target</strong>Subject to regulatory approval. CCP guarantee attaches at submission, not execution. TRM updates required for overnight locked-in agreements.</div></div>
+          <div class="tl-row"><span class="tl-date">Late 2026&ndash;2027</span><div class="tl-text"><strong>National exchange adoption</strong>NYSE, Nasdaq, Cboe, MEMX expected to follow NSCC and SIP transitions.</div></div>
+          <div class="tl-row"><span class="tl-date">2028&ndash;2029</span><div class="tl-text"><strong>Fedwire expansion</strong>Federal Reserve extends Fedwire Funds and NSS to include Sundays. Securities and cash settlement remain misaligned until then.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEMIC: DOMAIN 1 -->
+<div class="theme-hdr" id="systemic">
+  <div class="theme-hdr-inner">
+    <div class="theme-n">01</div>
+    <div>
+      <div class="sec-kicker" style="padding:0;margin-bottom:0.4rem;">Domain 1 of 4</div>
+      <h3 class="theme-title">Systemic and Cross-Asset Challenges</h3>
+      <p style="font-size:0.86rem;color:var(--slate);margin-top:0.3rem;">These challenges affect every DTC-eligible security, every asset class, and every operations team using the shared infrastructure. They are the foundation on which all asset-class-specific challenges rest.</p>
+      <div class="theme-scope" style="margin-top:0.6rem;">
+        <span class="badge badge-direct">Equities</span>
+        <span class="badge badge-occ">Options</span>
+        <span class="badge badge-indirect">Convertibles</span>
+        <span class="badge badge-infra">Fixed Income</span>
+        <span class="badge badge-infra">All DTC-Eligible</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cards-wrap">
+
+  <div class="card">
+    <div class="card-n">01</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">All Securities</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">"Business Day" Is Legally Undefined for a 23/5 Environment, and Every Existing Agreement Assumes the Old Framework</h4>
+      <div class="card-body">
+        <p>Most U.S. bond indentures, equity deposit agreements, exchange offer documents, and DTC Standard Terms and Conditions define a "Business Day" as a day on which banks in New York City are open for business. Under that formulation, a trade executed on a Sunday evening during the NSCC's overnight session occurs on a Non-Business Day for the purposes of those agreements, while simultaneously carrying a Monday trade date in the clearing system. These two frameworks are now in direct conflict.</p>
+        <p>SIFMA and ISDA's joint submission to the CFTC states directly that the definition of "business day" has widespread impact and must be clarified by regulators before market participants can restructure their compliance and operational frameworks. That clarification has not been issued by the SEC for equity markets. The transition period during which operational practice diverges from governing legal documentation begins at NSCC's June 2026 transition.</p>
+        <p>For merger agreements, the same ambiguity affects Volume Weighted Average Price calculations. Most merger agreements define a "Trading Day" by reference to exchange hours. When a flash crash or technical halt occurs at 2:00 a.m. ET, it is unresolved whether that event constitutes a "Market Disruption Event" sufficient to exclude the session from the VWAP count, or whether Force Majeure clauses in existing agreements apply to overnight session failures.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">SIFMA, SIFMA AMG and ISDA Letter to CFTC (May 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">02</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">All Securities</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">DTC's Shared Night Batch Infrastructure Processes All Asset Classes Through the Same Overnight Window That Is Now a Trading Session</h4>
+      <div class="card-body">
+        <p>DTC is the depository for all equity, municipal and corporate debt, and money market securities in the U.S., receiving instructions from a variety of organizations through a processing window that already spans 23 hours per day, five days per week. NSCC clears virtually all broker-to-broker equity, listed corporate and municipal bond, and unit investment trust transactions. The same night batch cycle that settles equity trades also processes bond interest payments, bond calls and redemptions, consent solicitations, and dividend distributions. The same DTC Asset Services group handles corporate actions across every asset class in that universe.</p>
+        <p>The 23/5 transition concentrates new overnight trade activity into exactly the processing window that the night batch depends on. A mandatory corporate event that becomes effective during an overnight session, a bond interest payment with a record date falling on a Sunday, or a voluntary tender offer instruction deadline set at 8:00 p.m. ET all create demands on the shared infrastructure at precisely the time it is most constrained.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.dtcc.com/understanding-settlement/index.html" target="_blank" rel="noopener">DTCC: Understanding the Settlement Process</a>
+        <span class="src-pipe">|</span>
+        <a href="https://dtcclearning.com/products-and-services/asset-services/issuer-services.html" target="_blank" rel="noopener">DTC Issuer Services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">03</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">All Securities</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">The One-Hour Maintenance Window Is the Only Protected Interval for the Entire Industry, With No Fallback</h4>
+      <div class="card-body">
+        <p>SIFMA's proposed one-hour daily pause from 8:00 to 9:00 p.m. ET (Monday through Thursday) is the only protected window for system maintenance, patch deployment, batch cycle initiation, and reconciliation across the entire industry for every asset class processed at DTC. SIFMA and ISDA's CFTC submission states explicitly that uninterrupted trading heightens the risk of unplanned outages, complicates patch management, and requires live change deployments and rollback mechanisms.</p>
+        <p>If a custody bank's position management system, a corporate actions processing platform, or a DTC participant connection experiences a failure during that window, the failure cascades into the next trading session with no protected recovery window until the following evening. For fixed income operations teams sharing the same platforms and infrastructure, a failure triggered by equity-side overnight processing stress has the same consequence. The maintenance window is a systemic chokepoint for every asset class on the platform.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">SIFMA, SIFMA AMG and ISDA Letter to CFTC (May 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.sifma.org/issues/market-structure/extended-trading-hours" target="_blank" rel="noopener">SIFMA Extended Trading Hours Resource Page</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">04</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">All Securities</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">Staffing Models, Messaging Standards, and Vendor SLAs Are All Built for Business Hours Across Every Asset Class</h4>
+      <div class="card-body">
+        <p>SIFMA has directed firms to initiate firm-wide readiness assessments, review global operating models, and establish firm-wide governance frameworks. The DTCC and EY white paper found that almost 60 percent of surveyed firms expect mandatory IT and risk management upgrades. SIFMA and ISDA's CFTC submission notes that this applies to firms that do not participate in overnight trading as well: resources will still be needed to meet requirements such as margin driven by overnight activity at counterparty firms.</p>
+        <p>For corporate actions specifically, the vendor ecosystem of data providers, transfer agents, information agents, proxy tabulation agents, and paying agents all operate on business-hours SLAs established for a five-day market. The 2025 SIFMA Global Corporate Actions Forum identified the need for standardized templates, coordinated timing structures, and end-to-end transparency across custody, lending, and settlement to maintain compliance at speed in a continuous trading environment. That infrastructure does not yet exist.</p>
+        <p>The ISO 20022 transition adds a concurrent pressure. DTCC's next-generation settlement system will support ISO 20022 interfaces only. DTCC worked with ISITC, which serves as the U.S. National Market Practice Group for ISO 20022 corporate actions messaging, to develop the current corporate actions message specifications. Those specifications predate 23/5 as an operational reality and have not been updated for overnight processing requirements.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/theshiftto24x5trading.pdf" target="_blank" rel="noopener">DTCC and EY: The Shift to 24x5 Trading (Dec 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">2025 SIFMA Global Corporate Actions Forum</a>
+        <span class="src-pipe">|</span>
+        <a href="https://isitc.org/working-groups/corporate-actions/" target="_blank" rel="noopener">ISITC Corporate Actions Working Group</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">05</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">All Securities</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">The Fedwire Funding Gap: Securities Will Move Overnight, Cash Settlement Will Not Until 2028 to 2029</h4>
+      <div class="card-body">
+        <p>The Federal Reserve has announced plans to extend Fedwire Funds and the National Settlement Service to include Sunday operations, on a phased schedule targeting 2028 to 2029. The OCC white paper specifically supports this expansion and notes it would "support real-time margining and could reduce reliance on pre-funding." Until that expansion occurs, NSCC will process and guarantee overnight securities transactions beginning June 2026, but the corresponding cash leg for corporate action payments (dividends, merger consideration, redemption proceeds, bond interest) triggered in an overnight session cannot settle through Fedwire until the following Fedwire operating day.</p>
+        <p>This creates a funding gap that firms must carry on their own balance sheets. For large mandatory corporate events with cash consideration, the aggregate scale of that gap across the industry has not been quantified in any published SIFMA or DTCC document. OCC's observation that this gap will require "custodial and settlement banks, as well as services like Fedwire and NSS, to observe longer operating hours" is a formal acknowledgment of the problem, not a solution to it.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://focus.world-exchanges.org/articles/future-us-listed-options" target="_blank" rel="noopener">OCC White Paper: The Future of U.S. Listed Options (Sep 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.federalreserve.gov/paymentsystems/fedwire-extended-hours.htm" target="_blank" rel="noopener">Federal Reserve: Fedwire Extended Hours</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- EQUITIES: DOMAIN 2 -->
+<div class="theme-hdr" id="equities" style="border-top-color:var(--teal)">
+  <div class="theme-hdr-inner">
+    <div class="theme-n">02</div>
+    <div>
+      <div class="sec-kicker" style="padding:0;margin-bottom:0.4rem;">Domain 2 of 4</div>
+      <h3 class="theme-title">Equities and Exchange-Traded Products</h3>
+      <p style="font-size:0.86rem;color:var(--slate);margin-top:0.3rem;">Directly in scope for 23/5 exchange trading. Covers common equity, preferred stock, ETFs, ETNs, ADRs, warrants, and rights. These securities carry the full suite of corporate action event types and constitute the primary surface area of the transition.</p>
+      <div class="theme-scope" style="margin-top:0.6rem;">
+        <span class="badge badge-direct">Common Equity</span>
+        <span class="badge badge-direct">Preferred Stock</span>
+        <span class="badge badge-direct">ETFs and ETNs</span>
+        <span class="badge badge-direct">ADRs</span>
+        <span class="badge badge-direct">Warrants and Rights</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cards-wrap">
+
+  <div class="card">
+    <div class="card-n">06</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">Equities and ETPs</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">Ex-Date Mechanics Are Internally Inconsistent With the 8:00 p.m. Trade-Date Cutoff, and the ISO 20022 Message Fields That Govern Entitlement Have Not Been Validated for Overnight Trades</h4>
+      <div class="card-body">
+        <p>Under T+1, ex-date equals record date minus one business day. That convention was calibrated for a market structure where the trading day ends at 4:00 p.m. ET. Under 23/5, a trade submitted at 9:05 p.m. on a Monday carries a Tuesday trade date and Wednesday settlement. If Monday is the current ex-date, that buyer is ex-entitlement under the old convention, but actually settles on record date and should be entitled under T+1 mechanics. SIFMA has identified standardized treatment of record dates and cut-offs as a required deliverable for a functioning 23/5 market. As of April 2026, that work is not complete.</p>
+        <p>There is also a structural timing mismatch between the clearing record and the transfer agent record. The ISO 20022 message framework uses three distinct fields for a single transaction: <span class="field-ref">TradeDate</span>, <span class="field-ref">SettlementDate</span>, and <span class="field-ref">EntryDateTime</span>. For an overnight trade, these three fields can refer to three different calendar days. DTCC worked with ISITC to develop the ISO 20022 corporate actions implementation, but the specifications were written before overnight trading was operationally real. Whether those fields, as currently implemented across custodians and transfer agents, produce a legally defensible entitlement determination for an overnight trade has not been tested in production.</p>
+      </div>
+      <div class="callout" style="margin-top:1rem;background:#F8FAFC;border-left-color:#64748B;">
+        <p style="font-size:0.8rem;color:#374151;"><strong style="color:var(--ink);">ISO/SWIFT gap note.</strong>
+        Neither ISO nor SWIFT has published any document addressing how 23/5 extended trading hours affect corporate actions messaging timing. DTCC's four active ISO 20022 corporate actions message categories (<span class="field-ref">seev.031</span> announcements, <span class="field-ref">seev.036</span> entitlements, <span class="field-ref">seev.038</span> instructions, <span class="field-ref">seev.044</span> confirmations) undergo annual change maintenance each November via a Standards Release. Any fix to the overnight timestamp problem requires a Standards Release proposal, review, and implementation cycle. The earliest a messaging update could be deployable is November 2026 at best. Separately, the legacy SWIFT <span class="field-ref">MT 564</span> / <span class="field-ref">MT 565</span> / <span class="field-ref">MT 566</span> / <span class="field-ref">MT 567</span> / <span class="field-ref">MT 568</span> corporate actions message series are now formally deprecated following the November 2025 MT-to-MX migration. They are no longer maintained or evolved. Firms still using them for CA notifications are running on infrastructure that will not receive any 23/5-related updates under any circumstances.
+        </p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.sifma.org/issues/market-structure/extended-trading-hours" target="_blank" rel="noopener">SIFMA Extended Trading Hours Resource Page</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.dtcc.com/-/media/Files/Downloads/issues/Corporate-Actions-Transformation/Getting_Started_CA_ISO_20022.pdf" target="_blank" rel="noopener">DTCC / ISITC: Getting Started with Corporate Actions ISO 20022 Messaging</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.dtcc.com/asset-services/corporate-actions-processing/iso-20022-messaging-specifications" target="_blank" rel="noopener">DTCC ISO 20022 Messaging Specifications</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.swift.com/standards/iso-20022/iso-20022-standards" target="_blank" rel="noopener">SWIFT ISO 20022 Standards (MT deprecation)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">07</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">Equities and ETPs</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title"><span class="field-ref">FIX Tag 715</span> Must Be Implemented End-to-End: A Single Overnight Session Spans Two Clearing Business Dates That Existing Systems Cannot Distinguish</h4>
+      <div class="card-body">
+        <p>DTCC's 23/5 infrastructure adds a new field, <span class="field-ref">FIX Tag 715</span> (Clearing Business Date), to Universal Trade Capture real-time output. This field distinguishes which clearing business date a position belongs to within a single calendar day. Its implementation is mandatory for all firms receiving UTC real-time output, regardless of whether they participate in overnight trading. A position acquired at 9:05 p.m. Monday carries a Tuesday trade date. A position acquired at 7:55 p.m. the same Monday carries a Monday trade date. Without Tag 715 correctly implemented across all downstream systems, those two positions are indistinguishable in the clearing record. Any entitlement calculation, election deadline determination, or claim resolution that relies on trade-date membership to establish record-date eligibility will produce incorrect results.</p>
+        <p>Firms must validate end-of-day balancing before the next trade date and demonstrate the ability to accept two clearing business dates within a single overnight session. DTCC's testing program, which began January 11, 2026, is designed to surface this gap. Not all firms have completed that testing.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/Universal-Trade-Capture-FAQs.pdf" target="_blank" rel="noopener">DTCC UTC 24x5 Trade Processing FAQ</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/UTC-24-x-5-Extended-Trading-Hours.pdf" target="_blank" rel="noopener">DTCC Equities Clearing Enhancements: UTC 24x5</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.capco.com/intelligence/capco-intelligence/us-equities-extended-trading-hours" target="_blank" rel="noopener">Capco: U.S. Equities Extended Trading Hours (Oct 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">08</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">Equities and ETPs</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">Mandatory and Voluntary Actions Are Fundamentally Different Problems: The Distinction Is Not Captured in Any Current 23/5 Readiness Framework</h4>
+      <div class="card-body">
+        <p>Mandatory corporate actions (stock splits, mergers, mandatory conversions, spinoffs) are a data and entitlement problem. The event happens regardless of holder action. Accuracy of the position record at record date is everything. In a 23/5 environment, that means every overnight position must be correctly classified by clearing business date and reconciled against the preserved DTCC cutoff before the record date snapshot runs.</p>
+        <p>Voluntary corporate actions (tender offers, rights offerings, exchange offers, consent solicitations) are a risk and decision-making problem. The holder must act within a defined window based on a price that may move materially during the overnight session after the election period has closed. SIFMA and ISDA's CFTC submission notes that market participants would need to restructure their business and staffing models from both a front-office and back-office perspective. FINRA and the exchanges are jointly evaluating rule changes to formalize halt and deadline protocols for voluntary events in extended trading cycles. As of April 2026, that framework is not finalized.</p>
+        <p>The 2025 SIFMA Global Corporate Actions Forum confirmed these pressures are live: tender offers extending to midnight and inconsistent event cut-offs are already stressing legacy systems before full 23/5 trading has commenced.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">SIFMA, SIFMA AMG and ISDA Letter to CFTC (May 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">2025 SIFMA Global Corporate Actions Forum</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">09</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">Equities and ETPs</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">Circuit Breakers, Trading Halt Protocols, and Event-Driven Suspension Procedures Have Not Been Redefined for an Overnight Session</h4>
+      <div class="card-body">
+        <p>The DTCC and EY white paper identifies this directly: circuit breakers currently apply only during standard trading hours and will need to be realigned for the expanded window. For corporate actions teams, trading halts are a primary operational control mechanism. They protect against price dislocation during the period between a corporate event announcement and its effectiveness. When halts are triggered in an overnight session under rules that have not been updated for extended hours, the downstream effect on election windows, instruction deadlines, and entitlement calculations is undefined.</p>
+        <p>FINRA and the exchanges are jointly evaluating rule changes that would formalize halting procedures for corporate actions executed in 24-hour trading cycles. The 2025 SIFMA Global Corporate Actions Forum noted Nasdaq's proposed accelerated delisting criteria as part of this broader drive toward faster resolutions. Neither the halting framework nor a consistent protocol for corporate event announcements and suspensions in the overnight session has been finalized.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/theshiftto24x5trading.pdf" target="_blank" rel="noopener">DTCC and EY: The Shift to 24x5 Trading (Dec 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">2025 SIFMA Global Corporate Actions Forum</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">10</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">ADRs and Cross-Border</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">ADR and Cross-Border Corporate Actions Face a Multi-Layer Timing Conflict With No Published Resolution</h4>
+      <div class="card-body">
+        <p>ADRs trade on U.S. exchanges and are directly in scope for 23/5 trading. Their underlying ordinary shares trade in foreign markets during local business hours. When a corporate action occurs on the foreign underlying, the processing chain runs from foreign issuer to local custodian to depositary bank to DTC. That chain was designed for business-hours coordination. In a 23/5 environment, an ADR buyer at 10:00 p.m. ET on Monday creates an entitlement obligation that the depositary bank's foreign market custodian cannot act on until Tokyo opens the following morning.</p>
+        <p>The 2025 SIFMA Global Corporate Actions Forum identified cross-border tax tracking and withholding challenges for ADRs and synthetic positions as a priority: divergent country rates and inconsistent withholding treatments create compliance exposure for firms managing loans or short positions. Proposals to standardize income tracking using the highest available DTC withholding rate were discussed as a risk-mitigation measure, but the conclusion was that firms will require end-to-end transparency across custody, lending, and settlement that does not yet exist at speed.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">2025 SIFMA Global Corporate Actions Forum (Nov 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">11</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-direct">ETFs</span><span class="tag-sourced">Sourced + Analysis</span></div>
+      <h4 class="card-title">Bond ETFs Trade on a 23/5 Exchange While Their Underlying Bond Portfolio Operates on a Business-Day Schedule: The CA Lifecycle Is Split</h4>
+      <div class="card-body">
+        <p>ETFs clear through NSCC and settle at DTC on the same infrastructure as equities. A bond ETF trading at 11:00 p.m. ET on a Monday has a Tuesday trade date and Wednesday settlement. The ETF itself is fully in scope for 23/5 trading. But the corporate bond or municipal bond positions comprising its portfolio are OTC instruments whose interest payments, calls, and tender events are processed on business-day schedules by separate paying agents and transfer agents.</p>
+        <p>When a bond held in an ETF basket is called, tendered for, or makes a consent solicitation payment overnight, the ETF's corporate action entitlement at the share level depends on the portfolio-level event being processed correctly. In practice, the ETF's creation and redemption process also relies on in-kind delivery of the underlying basket securities, which can only be delivered during DTC business hours. This creates a structural mismatch: the ETF trades continuously, but the underlying basket corporate actions and basket deliveries do not.</p>
+        <p style="font-size:0.8rem;color:var(--slate);font-style:italic;">Note: The ETF basket delivery constraint is grounded in established DTC ETF settlement practice. The corporate action consequence is operational analysis. The underlying source for the ETF clearing process is DTCC's Equities Clearing documentation.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://dtcclearning.com/products-and-services/equities-clearing.html" target="_blank" rel="noopener">DTCC Learning Center: Equities Clearing / ETF Process</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- OPTIONS: DOMAIN 3 -->
+<div class="theme-hdr" id="options" style="border-top-color:#7C3AED">
+  <div class="theme-hdr-inner">
+    <div class="theme-n" style="color:#7C3AED">03</div>
+    <div>
+      <div class="sec-kicker" style="padding:0;margin-bottom:0.4rem;color:#7C3AED">Domain 3 of 4</div>
+      <h3 class="theme-title">Listed Options and Derivatives</h3>
+      <p style="font-size:0.86rem;color:var(--slate);margin-top:0.3rem;">OCC is the sole CCP for listed options in the United States. It published a white paper in September 2025 recommending a phased approach to continuous trading, explicitly identifying the contract adjustment workflow, margin calculation, and reporting obligations as requiring fundamental redesign. All three challenges below are sourced to OCC primary publications.</p>
+      <div class="theme-scope" style="margin-top:0.6rem;">
+        <span class="badge badge-occ">Listed Equity Options</span>
+        <span class="badge badge-occ">Index Options</span>
+        <span class="badge badge-occ">Stock Futures</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cards-wrap">
+
+  <div class="card">
+    <div class="card-n">12</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-occ">Listed Options</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">OCC Must Shift From Centralized Cut-Offs to Event-Driven CA Adjustment Workflows That It Does Not Currently Have</h4>
+      <div class="card-body">
+        <p>OCC determines how listed options are adjusted following a corporate action on the underlying security. When a dividend, spinoff, or merger occurs on the underlying equity, OCC assesses whether to adjust the strike price, contract size, or deliverable of the related options series. It communicates that determination via an OCC Information Memo. Market participants rely on those memos for pricing and investment decisions, including whether to exercise their contracts. The entire workflow currently runs on a business-day timeline.</p>
+        <p>OCC's September 2025 white paper states directly that the industry must shift from "centralized cut-offs for trade processing, market close pricing, margin calculation, and collateral management" to "event-driven workflows." If a spinoff becomes effective at 2:00 a.m. ET, the options on the parent company are affected immediately. The price at which options open the following morning depends on whether OCC has made and communicated its adjustment determination. If the adjustment process has not run because OCC's workflow is scheduled for business hours, the market opens without a definitive deliverable, creating pricing uncertainty across every market maker with positions in the affected series.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.theocc.com/newsroom/views/2025/09-29-white-paper-considerations-of-a-continuous-trading-environment" target="_blank" rel="noopener">OCC White Paper: Considerations of a Continuous Trading Environment (Sep 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://optiver.com/insights/a-uniform-approach-to-corporate-actions/" target="_blank" rel="noopener">Optiver: A Uniform Approach to Corporate Actions</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">13</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-occ">Listed Options</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">OCC's Intraday Margin System Does Not Currently Account for Options Affected by Corporate Action Adjustments</h4>
+      <div class="card-body">
+        <p>This limitation is documented in a Federal Register filing. OCC's approved Intraday Risk Charge system revalues positions every five minutes during standard equity trading hours. The filing states explicitly that "the system does not take into account options affected by corporate action adjustments and newly listed option series or strikes, which do not receive adjusted metrics until the next overnight margin calculation process."</p>
+        <p>Under 23/5, the "next overnight margin calculation process" may be hours after the corporate event occurred and hours after the related options began trading at incorrect metrics. The practical consequence: OCC Clearing Member margin requirements for options positions affected by a corporate action taking effect in an overnight session will not reflect the post-event contract terms until the following day's margin cycle. In a volatile overnight session following a major corporate announcement, that margin gap is a documented counterparty risk. OCC is evaluating adjustments to its risk management processes as part of its continuous trading assessment.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://www.federalregister.gov/documents/2025/04/09/2025-06041/self-regulatory-organizations-the-options-clearing-corporation-order-granting-approval-of-proposed" target="_blank" rel="noopener">OCC Intraday Risk Charge Approval Order: SR-OCC-2024-010 (Apr 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">14</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-occ">Listed Options</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">OCC Must Redefine "Trading Day," "Business Day," and "Expiration" for Options in an Environment It Has Not Yet Finalized</h4>
+      <div class="card-body">
+        <p>OCC's current rules specify that equity options "may be exercised on any business day up to and including the expiration date" and that "exercise notices tendered on any business day will result in delivery of the underlying stock on the first T+1 business day following exercise." When the underlying equity trades 23/5, the question of which sessions count as a "business day" for exercise purposes is unresolved. OCC's white paper states: "the industry would need to define a trading day and delineate between 'traditional' hours and 'extended' sessions" and confirms it is "currently evaluating OCC's rules within this context."</p>
+        <p>For cash-settled options with VWAP-based settlement, the same "trading day" definitional problem that applies to merger agreement VWAP calculations applies to options settlement mechanics. OCC is evaluating adjustments to existing cross-CCP agreements and exploring potential new agreements to support aligned margin cycles. Those evaluations are ongoing, not complete.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://focus.world-exchanges.org/articles/future-us-listed-options" target="_blank" rel="noopener">OCC White Paper: The Future of U.S. Listed Options (Sep 2025)</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.theocc.com/clearance-and-settlement/clearing/equity-options-product-specifications" target="_blank" rel="noopener">OCC Equity Options Product Specifications (current)</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FIXED INCOME: DOMAIN 4 -->
+<div class="theme-hdr" id="fixed-income" style="border-top-color:var(--amber)">
+  <div class="theme-hdr-inner">
+    <div class="theme-n" style="color:var(--amber)">04</div>
+    <div>
+      <div class="sec-kicker" style="padding:0;margin-bottom:0.4rem;color:var(--amber)">Domain 4 of 4</div>
+      <h3 class="theme-title">Fixed Income, Convertible Securities, and Cross-Asset Instruments</h3>
+      <p style="font-size:0.86rem;color:var(--slate);margin-top:0.3rem;">Bond trading itself is not on a 23/5 exchange. But the corporate actions affecting fixed income securities, and the operations teams and infrastructure that process them, are not isolated from the 23/5 transition. Three documented challenge areas apply directly.</p>
+      <div class="theme-scope" style="margin-top:0.6rem;">
+        <span class="badge badge-indirect">Convertible Bonds</span>
+        <span class="badge badge-infra">Corporate Bonds</span>
+        <span class="badge badge-infra">Municipal Bonds</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="cards-wrap">
+
+  <div class="card">
+    <div class="card-n">15</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-indirect">Convertible Securities</span><span class="tag-analysis">Operational Analysis</span></div>
+      <h4 class="card-title">Convertible Bond Conversion Triggers, VWAP Observation Periods, and Make-Whole Calculations Are Directly Exposed to Overnight Equity Price Movements</h4>
+      <div class="card-body">
+        <p>Convertible bonds contain provisions whose activation depends on the price of the underlying equity over defined periods. Contingent conversion provisions typically allow conversion when the stock closes at or above 130 percent of the conversion price for a defined number of days within a measurement period. Fundamental change put provisions allow holders to require repurchase when a change of control occurs, with the settlement price often referencing the stock's VWAP over an observation period surrounding the event. Make-whole fundamental change provisions adjust the conversion rate upward based on the stock price at the time of the relevant event.</p>
+        <p>In a 23/5 environment, the equity price at 2:00 a.m. is now a price at which the stock legally "closed" for a Tuesday trade date. Whether that overnight closing price counts for a contingent conversion measurement, whether it is included in a fundamental change VWAP observation period, and whether a change of control effected in an overnight session triggers the put period immediately on a Non-Business Day are all questions governed by existing indenture language that was not drafted to address overnight trading. Legal counsel has not published guidance. No regulator has issued clarification.</p>
+        <p style="font-size:0.8rem;color:var(--slate);font-style:italic;">Note: This challenge is grounded in standard convertible bond indenture mechanics as documented in SEC-registered offering documents. It is operational analysis; no specific 23/5 industry publication addresses convertible corporate actions directly. It is presented because the legal exposure is material and unaddressed.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Legal Basis:</span>
+        <a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">SIFMA / ISDA CFTC Letter: "Business Day" definitional gap (May 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">16</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">Corporate Bonds</span><span class="tag-analysis">Operational Analysis</span></div>
+      <h4 class="card-title">Change of Control Put Provisions in Bond Indentures Can Be Triggered by Equity CA Events That Now Occur in an Overnight Session</h4>
+      <div class="card-body">
+        <p>Most investment-grade and high-yield bond indentures contain Change of Control provisions that allow or require bondholders to put the bonds back to the issuer at 101 percent of par (plus accrued interest) when the issuer undergoes a Change of Control event. The equity-level merger or acquisition that constitutes that Change of Control is now subject to 23/5 trading. If a merger closes, or a merger agreement is executed, or a tender offer for equity achieves a threshold ownership level during an overnight session, the question of whether the Change of Control triggering event occurred on a "Business Day" is directly implicated by the same definitional gap documented in Challenge 01.</p>
+        <p>The 30-day put period that bondholders typically have to tender begins from the date of the Change of Control. If that date falls in an overnight session, the start of the 30-day window is ambiguous. The operations team responsible for monitoring the bond issuer's equity events for Change of Control triggers must now monitor 23/5, even though the bond itself trades OTC.</p>
+        <p style="font-size:0.8rem;color:var(--slate);font-style:italic;">Note: This challenge is grounded in standard high-yield and investment-grade indenture practice. It is operational analysis presented because the operational consequence for fixed income CA teams is significant and has not been formally addressed in any published 23/5 framework document.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Legal Basis:</span>
+        <a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">SIFMA / ISDA CFTC Letter: definitional gap (May 2025)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-n">17</div>
+    <div>
+      <div class="card-scope"><span class="badge badge-infra">Fixed Income</span><span class="tag-sourced">Sourced</span></div>
+      <h4 class="card-title">Transfer Agents and Paying Agents for Fixed Income Securities Share the Same Business-Hours SLA Framework That Is Now Incompatible With the CA Ecosystem</h4>
+      <div class="card-body">
+        <p>DTC works with issuers and their authorized agents to announce and process corporate actions, with paying agents and transfer agents handling income and redemption payments, tender and consent events, and name changes across both equity and fixed income securities. The 2025 SIFMA Global Corporate Actions Forum identified specific unresolved obligations around fractional share rounding and beneficial holder disclosures, and noted a structural change with direct transfer agent implications: the move from a five-day to a ten-calendar-day notice period for reverse stock splits reflects closer alignment with SEC expectations and creates additional pressure on event-preparation timelines.</p>
+        <p>For fixed income, paying agents typically receive same-day notification from the issuer before a defined cut-off time and then distribute payments through DTC on the scheduled pay date. That notification chain was designed for business-hours coordination. In a 23/5 environment, if a bond call or tender offer acceptance is communicated after the paying agent's business-hours window, the payment timeline extends by at least one business day, and the beneficial holder's expectation of same-day or next-day credit is not met. No paying agent has published guidance on how it will handle overnight notifications from issuers or DTC in the 23/5 environment.</p>
+      </div>
+      <div class="card-source">
+        <span class="card-source-lbl">Source:</span>
+        <a href="https://dtcclearning.com/products-and-services/asset-services/issuer-services.html" target="_blank" rel="noopener">DTC Issuer Services</a>
+        <span class="src-pipe">|</span>
+        <a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">2025 SIFMA Global Corporate Actions Forum (Nov 2025)</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- REGULATORY FOCUS -->
+<section class="section section-alt" id="regulatory">
+  <div class="container">
+    <div class="sec-kicker">Regulatory and Legal Focus</div>
+    <h2 class="sec-title">Three Active Regulatory Obligations No Firm Can Defer</h2>
+    <p class="sec-desc">Extended-hours trading is an explicit 2026 examination priority for the SEC Division of Examinations. The law firms below independently confirmed this in published client alerts. Two additional regulatory frameworks require immediate action regardless of whether a firm plans to participate in overnight trading.</p>
+    <div class="reg-grid">
+      <div class="reg-card">
+        <div class="reg-card-badge">SEC Exam Priority 2026</div>
+        <h4>Division of Examinations: Extended-Hours Trading Is a Named Focus for Broker-Dealers</h4>
+        <p>Sidley Austin's November 2025 client alert states the Division will continue to focus on equity and fixed-income trading practices, including broker-dealer activities associated with extended-hours trading. Goodwin Procter's December 2025 client alert confirms the same, noting the Division will assess credit, market, and liquidity risk management controls to ensure firms maintain sufficient liquidity during stress events as markets move toward extended hours and 24/5 trading.</p>
+        <p>Both alerts note the 2026 priorities are the first issued under Chairman Paul Atkins and reflect a Division renewed focus on operational effectiveness. Extended-hours trading compliance is named alongside cybersecurity and Regulation Best Interest as a core examination area.</p>
+        <blockquote class="pull"><p>Firms without documented policies, procedures, and supervisory frameworks for overnight trading activity are operating with an identified regulatory exposure, not a theoretical one.</p></blockquote>
+        <a class="reg-link" href="https://www.sidley.com/en/insights/newsupdates/2025/11/us-sec-division-of-examination-announces-2026-exam-priorities" target="_blank" rel="noopener">Sidley Austin client alert</a>
+        &nbsp;&middot;&nbsp;
+        <a class="reg-link" href="https://www.goodwinlaw.com/en/insights/publications/2025/12/alerts-finance-fs-sec-sheds-light-on-2026-priorities" target="_blank" rel="noopener">Goodwin Procter client alert</a>
+      </div>
+      <div class="reg-card">
+        <div class="reg-card-badge">FINRA Rule 2265</div>
+        <h4>Extended-Hours Risk Disclosures Must Be Updated and Have Not Been</h4>
+        <p>FINRA Rule 2265 requires broker-dealers to provide customers with a written risk disclosure before permitting extended-hours trading. The current disclosure identifies lower liquidity, higher volatility, and wider spreads. It was adopted in 2000 for pre-market and after-hours sessions of limited duration.</p>
+        <p>Under 23/5, the disclosure must address risks specific to an overnight session: the possibility that a corporate action ex-date or record date occurs during the session, that entitlements may not be finalized before the next business day, and that a holder may be unable to trade out of a position before an overnight election deadline closes. No FINRA guidance on updating Rule 2265 disclosures for the 23/5 environment has been issued as of April 2026.</p>
+        <a class="reg-link" href="https://www.finra.org/rules-guidance/rulebooks/finra-rules/2265" target="_blank" rel="noopener">FINRA Rule 2265</a>
+        &nbsp;&middot;&nbsp;
+        <a class="reg-link" href="https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/extended-hours-trading" target="_blank" rel="noopener">FINRA 2026 Annual Regulatory Oversight Report</a>
+      </div>
+      <div class="reg-card">
+        <div class="reg-card-badge">SEC Rule 613 / CAT</div>
+        <h4>Clock Synchronization Requirements Apply to Overnight Sessions Immediately</h4>
+        <p>The Consolidated Audit Trail already accepts files 24/7, with an 8:00 a.m. ET T+1 reporting deadline. Under Rule 613, all CAT reporters must synchronize their business clocks to within 50 milliseconds of the NIST time standard. In a session where a corporate action record date snapshot may be taken at midnight, a clock drift between a custodian's position system and the DTCC server produces a different trade population for entitlement purposes than the official clearing record.</p>
+        <p>Capco's analysis confirms that as sessions extend, firms must align capture, clock synchronization, and exception management coverage to the additional trading hours. This requirement applies immediately to the existing overnight ATS sessions and will be mandatory for all firms when exchanges go live.</p>
+        <a class="reg-link" href="https://www.capco.com/intelligence/capco-intelligence/us-equities-extended-trading-hours" target="_blank" rel="noopener">Capco ETH Analysis: CAT and Surveillance Readiness</a>
+      </div>
+      <div class="reg-card">
+        <div class="reg-card-badge">DTCC Testing</div>
+        <h4><span class="field-ref">FIX Tag 715</span> Testing Is Mandatory. Non-Participation Is Not an Option.</h4>
+        <p>DTCC's UTC 24x5 FAQ is explicit: all clients receiving UTC real-time output must accept the new <span class="field-ref">FIX Tag 715</span> Clearing Business Date field and successfully test in the PSE environment, regardless of whether they plan to submit trades during extended hours. This requirement is not optional for non-participants. The test involves demonstrating the ability to balance end-of-day and to process two clearing business dates within a single overnight session.</p>
+        <p>Firms must contact the NSCC Integration team to confirm Tag 715 receipt and acknowledge successful testing. Client testing began January 11, 2026. Firms that have not completed this testing cannot validate position balancing across the extended session, which is a prerequisite for any entitlement calculation related to overnight positions.</p>
+        <a class="reg-link" href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/Universal-Trade-Capture-FAQs.pdf" target="_blank" rel="noopener">DTCC UTC 24x5 FAQ</a>
+        &nbsp;&middot;&nbsp;
+        <a class="reg-link" href="https://www.dtcc.com/dtcctransformation/24x5" target="_blank" rel="noopener">DTCC 23/5 Readiness Hub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="section section-ink" id="agenda">
+  <div class="container">
+    <div class="agenda-grid">
+      <div class="agenda-intro">
+        <div class="sec-kicker" style="color:var(--teal-mid)">Leadership Agenda</div>
+        <h2>Seven actions that cannot wait for exchanges to go live</h2>
+        <p style="margin-top:1rem;">NSCC testing is underway. The SEC is already examining compliance. SIFMA's corporate actions working group is active and shaping standards now. Firms that begin preparatory work after exchange adoption in late 2026 will face compressed timelines under active regulatory scrutiny, against industry standards they had no role in designing.</p>
+      </div>
+      <div class="agenda-list">
+        <div class="agenda-item">
+          <span class="agenda-n">01</span>
+          <div class="agenda-text"><strong>Complete DTCC's <span class="field-ref">FIX Tag 715</span> testing immediately</strong>All firms receiving UTC real-time output are required to test. Non-participation is not an option. Without Tag 715 validation, position balancing across the extended session is unverified and entitlement calculations based on overnight positions are unreliable.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">02</span>
+          <div class="agenda-text"><strong>Commission a corporate actions impact assessment covering all asset classes</strong>Separate from the firm-wide readiness assessment SIFMA recommends. Must address record date mechanics, <span class="field-ref">FIX Tag 715</span> downstream propagation, ISO 20022 <span class="field-ref">TradeDate</span> / <span class="field-ref">EntryDateTime</span> field integrity, OCC adjustment workflow dependencies, and convertible / fixed income CA exposure to the "Business Day" definitional gap.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">03</span>
+          <div class="agenda-text"><strong>Engage legal counsel on the "Business Day" definitional gap across all governing documents</strong>The SIFMA / ISDA CFTC letter confirms regulators have not resolved this. Every indenture, deposit agreement, exchange offer agreement, and transfer agent contract that references "Business Day," "Trading Day," or "Market Disruption Event" carries transitional legal exposure. That inventory must be built before June 2026.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">04</span>
+          <div class="agenda-text"><strong>Update FINRA Rule 2265 extended-hours disclosures</strong>The current disclosure language was written for 2000-era pre-market and after-hours sessions. It does not address CA entitlement ambiguity, election window closure before overnight session end, or record date exposure. No FINRA update has been issued. The firm must act independently.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">05</span>
+          <div class="agenda-text"><strong>Renegotiate SLAs with transfer agents, information agents, paying agents, and proxy tabulation agents across all asset classes</strong>Every intermediary in the CA chain operates on business-hours SLAs. For equities and fixed income alike, those agreements must be reviewed before overnight events require overnight responses.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">06</span>
+          <div class="agenda-text"><strong>Assess OCC contract adjustment dependencies for the options book</strong>Options positions on equity underlyings that trade 23/5 will face adjustment events in the overnight session before OCC's adjustment workflow has been redesigned for event-driven processing. Clearing Members must understand their exposure to the intraday margin gap documented in OCC's Federal Register filing.</div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-n">07</span>
+          <div class="agenda-text"><strong>Engage SIFMA's corporate actions working group directly</strong>SIFMA is developing standardized templates, timing structures, and coordinated cut-off frameworks for the 23/5 environment. Firms that participate now will shape the standard. The alternative is implementing a framework designed without the firm's operational constraints in scope.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="matrix-inline" id="scope">
+  <div class="matrix-inner">
+    <div class="sec-kicker">Asset Class Reference</div>
+    <h2 class="sec-title">Asset Class Scope and Impact Classification</h2>
+    <p class="sec-desc" style="margin-bottom:1.5rem;">DTC holds custody of 3.5 million securities issues valued at $87.1 trillion. Corporate actions processing spans every asset class in that universe. The 23/5 transition creates direct, indirect, and shared-infrastructure impacts across all of them.</p>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Asset Class</th>
+          <th>DTC-Eligible</th>
+          <th>23/5 Trading Scope</th>
+          <th>CA Complexity</th>
+          <th>Primary Impact Channel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Common Equity</td>
+          <td>Yes</td>
+          <td><span class="badge badge-direct">Direct</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Record date, entitlement, voluntary action elections</td>
+        </tr>
+        <tr>
+          <td>Preferred Stock</td>
+          <td>Yes</td>
+          <td><span class="badge badge-direct">Direct</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Conversion triggers, dividend arrearages, call provisions</td>
+        </tr>
+        <tr>
+          <td>ETFs and ETNs</td>
+          <td>Yes</td>
+          <td><span class="badge badge-direct">Direct</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Distributions, creation/redemption basket timing, index rebalancing</td>
+        </tr>
+        <tr>
+          <td>ADRs</td>
+          <td>Yes</td>
+          <td><span class="badge badge-direct">Direct</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Multi-layer timing: U.S. overnight session vs. local market CA workflow</td>
+        </tr>
+        <tr>
+          <td>Warrants and Rights</td>
+          <td>Yes</td>
+          <td><span class="badge badge-direct">Direct</span></td>
+          <td><span class="dot-med"></span> Medium</td>
+          <td>Expiration mechanics, exercise formulas, subscription period deadlines</td>
+        </tr>
+        <tr>
+          <td>Listed Equity Options</td>
+          <td>Yes (OCC)</td>
+          <td><span class="badge badge-occ">OCC Evaluating</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Contract adjustment workflow, strike price recalculation, margin lag</td>
+        </tr>
+        <tr>
+          <td>Convertible Bonds</td>
+          <td>Yes</td>
+          <td><span class="badge badge-indirect">Indirect</span></td>
+          <td><span class="dot-high"></span> High</td>
+          <td>Conversion triggers, VWAP observation periods, make-whole calculations</td>
+        </tr>
+        <tr>
+          <td>Corporate and Municipal Bonds</td>
+          <td>Yes</td>
+          <td><span class="badge badge-infra">Shared Infrastructure</span></td>
+          <td><span class="dot-med"></span> Medium</td>
+          <td>Same DTC night batch; bond tenders with equity consideration</td>
+        </tr>
+        <tr>
+          <td>Money Market Instruments</td>
+          <td>Yes</td>
+          <td><span class="badge badge-infra">Shared Infrastructure</span></td>
+          <td><span class="dot-low"></span> Lower</td>
+          <td>MMI paying agent cut-offs share DTC processing infrastructure</td>
+        </tr>
+        <tr>
+          <td>Unit Investment Trusts</td>
+          <td>Yes</td>
+          <td><span class="badge badge-infra">Shared Infrastructure</span></td>
+          <td><span class="dot-low"></span> Lower</td>
+          <td>NSCC clears UITs; defined termination events follow equity CA timing</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="matrix-legend">
+      <div class="legend-item"><span class="badge badge-direct">Direct</span> Exchange-listed; 23/5 trading applies</div>
+      <div class="legend-item"><span class="badge badge-occ">OCC Evaluating</span> Options CCP actively assessing impact</div>
+      <div class="legend-item"><span class="badge badge-indirect">Indirect</span> OTC-traded but value tied to equities in scope</div>
+      <div class="legend-item"><span class="badge badge-infra">Shared Infrastructure</span> DTC night batch and teams shared with directly-impacted securities</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOURCES -->
+<section class="section" id="sources">
+  <div class="container">
+    <div class="sec-kicker">References</div>
+    <h2 class="sec-title">Primary Source Material</h2>
+    <div class="src-intro">
+      <p>Every factual claim in this briefing is grounded in a primary publication of a regulator, self-regulatory organization, industry trade body, clearinghouse, or law firm, or is identified as operational analysis with the legal or market practice basis stated explicitly. No claim is based on secondary reporting, unverified analysis, or fabricated citations.</p>
+    </div>
+    <div class="src-legend">
+      <div class="src-leg-item"><span class="sdot sdot-reg"></span> Regulatory body, SRO, or industry trade association</div>
+      <div class="src-leg-item"><span class="sdot" style="background:#7C3AED"></span> Law firm client alert</div>
+      <div class="src-leg-item"><span class="sdot sdot-ind"></span> Infrastructure provider or consultancy</div>
+    </div>
+    <table class="src-tbl">
+      <thead>
+        <tr><th></th><th>Document</th><th>Publisher</th><th>Date</th><th>Link</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Extended Trading Hours: Resource Page</td><td>SIFMA</td><td>Apr 2026</td><td><a href="https://www.sifma.org/issues/market-structure/extended-trading-hours" target="_blank" rel="noopener">sifma.org</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>The Shift to 24x5 Trading: What It Means for U.S. Equity Markets</td><td>DTCC and EY</td><td>Dec 2025</td><td><a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/theshiftto24x5trading.pdf" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Extended Trading Hours: A New Frontier for U.S. Equity Markets</td><td>SIFMA</td><td>Jun 2025</td><td><a href="https://www.sifma.org/news/blog/extended-trading-hours-a-new-frontier-for-us-equity-markets" target="_blank" rel="noopener">sifma.org</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Trading and Clearing Derivatives on a 24/7 Basis (Letter to CFTC)</td><td>SIFMA / ISDA</td><td>May 2025</td><td><a href="https://www.sifma.org/advocacy/letters/trading-and-clearing-derivatives-on-a-24-7-basis-sifma-sifma-amg-and-isda" target="_blank" rel="noopener">sifma.org</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Building the Roadmap to 24/7 Trading: Roundtable Debrief</td><td>SIFMA</td><td>Jan 2026</td><td><a href="https://events.sifma.org/24-7-trading-roundtable" target="_blank" rel="noopener">sifma.org</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Market Structure Conference Debrief</td><td>SIFMA</td><td>Dec 2025</td><td><a href="https://www.sifma.org/research/insights/the-market-structure-conference-debrief" target="_blank" rel="noopener">sifma.org</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Trend Report: 2025 SIFMA Global Corporate Actions Forum</td><td>Wolters Kluwer</td><td>Nov 2025</td><td><a href="https://www.wolterskluwer.com/en/expert-insights/trend-report-2025-sifma-global-corporate-actions-forum" target="_blank" rel="noopener">wolterskluwer.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Universal Trade Capture (UTC) 24x5 Trade Processing FAQ</td><td>DTCC / NSCC</td><td>2026</td><td><a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/Universal-Trade-Capture-FAQs.pdf" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Equities Clearing Enhancements: UTC 24x5 Extended Trading Hours</td><td>DTCC / NSCC</td><td>2026</td><td><a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/UTC-24-x-5-Extended-Trading-Hours.pdf" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>DTCC 23/5 Readiness Hub</td><td>DTCC</td><td>2026</td><td><a href="https://www.dtcc.com/dtcctransformation/24x5" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>DTCC Clearing and Settlement Functional Change Document</td><td>DTCC</td><td>2026</td><td><a href="https://www.dtcc.com/-/media/Files/Downloads/Transformation/Functional-Change-Document.pdf" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Post-Trade in a Market That Never Sleeps (Val Wotton, DTCC)</td><td>DTCC</td><td>Mar 2026</td><td><a href="https://www.dtcc.com/dtcc-connection/articles/2026/march/30/post-trade-in-a-market-that-never-sleeps" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Getting Started with Corporate Actions ISO 20022 Messaging (v2.0)</td><td>DTCC / ISITC</td><td>Ongoing</td><td><a href="https://www.dtcc.com/-/media/Files/Downloads/issues/Corporate-Actions-Transformation/Getting_Started_CA_ISO_20022.pdf" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Considerations of a Continuous Trading Environment and Implications for Central Clearing of U.S. Listed Options</td><td>OCC</td><td>Sep 2025</td><td><a href="https://www.theocc.com/newsroom/views/2025/09-29-white-paper-considerations-of-a-continuous-trading-environment" target="_blank" rel="noopener">theocc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>OCC Intraday Risk Charge Approval Order: SR-OCC-2024-010</td><td>OCC / SEC</td><td>Apr 2025</td><td><a href="https://www.federalregister.gov/documents/2025/04/09/2025-06041/self-regulatory-organizations-the-options-clearing-corporation-order-granting-approval-of-proposed" target="_blank" rel="noopener">federalregister.gov</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>OCC Equity Options Product Specifications</td><td>OCC</td><td>Current</td><td><a href="https://www.theocc.com/clearance-and-settlement/clearing/equity-options-product-specifications" target="_blank" rel="noopener">theocc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>DTC Issuer Services and Corporate Actions Processing</td><td>DTCC / DTC</td><td>Current</td><td><a href="https://dtcclearning.com/products-and-services/asset-services/issuer-services.html" target="_blank" rel="noopener">dtcclearning.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Understanding the DTCC Subsidiaries Settlement Process</td><td>DTCC</td><td>Current</td><td><a href="https://www.dtcc.com/understanding-settlement/index.html" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>2026 FINRA Annual Regulatory Oversight Report: Extended Hours Trading</td><td>FINRA</td><td>Dec 2025</td><td><a href="https://www.finra.org/rules-guidance/guidance/reports/2026-finra-annual-regulatory-oversight-report/extended-hours-trading" target="_blank" rel="noopener">finra.org</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>FINRA Rule 2265: Extended Hours Trading Risk Disclosure</td><td>FINRA</td><td>Current</td><td><a href="https://www.finra.org/rules-guidance/rulebooks/finra-rules/2265" target="_blank" rel="noopener">finra.org</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Federal Reserve: Fedwire Extended Hours</td><td>Federal Reserve</td><td>Ongoing</td><td><a href="https://www.federalreserve.gov/paymentsystems/fedwire-extended-hours.htm" target="_blank" rel="noopener">federalreserve.gov</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Nasdaq 23/5 Proposed Rule Change: Federal Register Notice</td><td>SEC / Nasdaq</td><td>Jan 2026</td><td><a href="https://www.federalregister.gov/documents/2026/01/13/2026-00416/self-regulatory-organizations-the-nasdaq-stock-market-llc-notice-of-filing-of-proposed-rule-change" target="_blank" rel="noopener">federalregister.gov</a></td></tr>
+        <tr><td><span class="sdot sdot-reg"></span></td><td>Cboe EDGX 23/5 Proposed Rule Change</td><td>SEC / Cboe</td><td>Apr 2026</td><td><a href="https://public-inspection.federalregister.gov/2026-07263.pdf" target="_blank" rel="noopener">federalregister.gov</a></td></tr>
+        <tr><td><span class="sdot" style="background:#7C3AED"></span></td><td>U.S. SEC Division of Examinations Announces 2026 Exam Priorities</td><td>Sidley Austin LLP</td><td>Nov 2025</td><td><a href="https://www.sidley.com/en/insights/newsupdates/2025/11/us-sec-division-of-examination-announces-2026-exam-priorities" target="_blank" rel="noopener">sidley.com</a></td></tr>
+        <tr><td><span class="sdot" style="background:#7C3AED"></span></td><td>SEC Sheds Light on 2026 Priorities: Risk Areas and Key Insights for Broker-Dealers</td><td>Goodwin Procter LLP</td><td>Dec 2025</td><td><a href="https://www.goodwinlaw.com/en/insights/publications/2025/12/alerts-finance-fs-sec-sheds-light-on-2026-priorities" target="_blank" rel="noopener">goodwinlaw.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>ISITC Corporate Actions Working Group and Market Practice v8.0</td><td>ISITC</td><td>Dec 2022 / Ongoing</td><td><a href="https://isitc.org/working-groups/corporate-actions/" target="_blank" rel="noopener">isitc.org</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>U.S. Equities Extended Trading Hours: Are You Ready for 24x5 in 2026?</td><td>Capco</td><td>Oct 2025</td><td><a href="https://www.capco.com/intelligence/capco-intelligence/us-equities-extended-trading-hours" target="_blank" rel="noopener">capco.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>Extended Overnight Trading: Opportunities and Considerations</td><td>Broadridge</td><td>2025</td><td><a href="https://www.broadridge.com/insights/extended-overnight-trading" target="_blank" rel="noopener">broadridge.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>ISO 20022 Corporate Actions Messaging Specifications (seev series)</td><td>DTCC</td><td>SR 2025</td><td><a href="https://www.dtcc.com/asset-services/corporate-actions-processing/iso-20022-messaging-specifications" target="_blank" rel="noopener">dtcc.com</a></td></tr>
+        <tr><td><span class="sdot sdot-ind"></span></td><td>ISO 20022 Standards | MT Deprecation (MT 564 series)</td><td>SWIFT</td><td>Nov 2025</td><td><a href="https://www.swift.com/standards/iso-20022/iso-20022-standards" target="_blank" rel="noopener">swift.com</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">Corporate Actions Operations / 23x5 Briefing | April 2026</span>
+    <p class="footer-disc">Prepared for executive distribution. All sourced claims are drawn from primary publications as noted. Challenges labeled Operational Analysis are professional judgment grounded in established market practice, identified as such. Nothing herein constitutes legal, regulatory, or investment advice.</p>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(
+  es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis') }),
+  { threshold: 0.06 }
+);
+document.querySelectorAll('.card').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
